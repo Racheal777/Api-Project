@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    background-color: rgb(5, 57, 136);
+
+
+}
+
+.logsForm{
+    margin: 7em auto 1em;
+    color: white;
+    text-align: center;
+    background-color: rgb(146, 187, 214);
+    padding: 1.4em 0.4em;
+    width: 60%;
+    border-radius: 5px;
+}
+
+.login_form{
+    width: 100%;
+    display: block;
+    padding: 1em;
+
+}
+
+.login_form label{
+    display: inline;
+    padding: 2px 1px;
+    color: black;
+}
+
+.login_form input{
+    width: 80%;
+    padding: 1em;
+    border: none;
+}

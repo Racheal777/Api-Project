@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="loginStyle.css">
+    
+    <title>Document</title>
+</head>
+
+<body class="main">
+    
+
+    <form class="logsForm">
+        <h3 class="h2">Login to continue</h3>
+        <div class="login_form">
+            <label for="username"><i class="fa fa-user"></i> Username/Email</label>
+            <input type="text" placeholder="Enter username or email" name="username" autocomplete="off">
+            <div id="userNameError"></div>
+        </div>
+        <div class="login_form">
+            <label for="password"><i class="fa fa-lock"></i> Password</label>
+            
+            <input type="password" placeholder="Enter Password" name="password" autocomplete="off" >
+            <i class=" fa fa-eye"></i>
+            <div id="passwordError"></div>
+        </div>
+
+        <div class="forgot_password">
+            <div id="rememberMeBox">
+                <input type="checkbox" name="remember" id="remember">
+                <p class="rememberMe">Remember me</p>
+            </div>
+            <div class="forgotPassword">
+                <a href="/forgot_password">Forget Password</a>
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="submit">Login</button>
+            <button type="reset">Cancel</button>
+        </div>
+        <div class="login_form noaccount">
+            <p>Don't have an account <a href="/signup">Signup</a></p>
+        </div>
+    </form>
+</body>
+</html>
