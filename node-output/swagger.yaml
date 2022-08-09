@@ -1,0 +1,316 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Restaurant Review API",
+    "description" : "Restaurant Review Application built by Racheal",
+    "contact" : {
+      "name" : "Racheal Kuranchie",
+      "url" : "https://linktr.ee/rachealkuranchie"
+    },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "paths" : {
+    "/diners" : {
+      "description" : "Restaurant resource",
+      "get" : {
+        "description" : "Operation to fetch all restaurant data",
+        "parameters" : [ {
+          "name" : "restaurant_id",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful Response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/inline_response_200"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "description" : "Operation to add a new restaurant data",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/diners_body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Record successfully added"
+          }
+        }
+      }
+    },
+    "/diners{id}" : {
+      "description" : "Restaurant resource",
+      "get" : {
+        "description" : "Operation to fetch a restaurant data",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful Response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/inline_response_200"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "description" : "Operation to add a new restaurant data",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/dinersid_body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Record successfully updated"
+          }
+        }
+      },
+      "delete" : {
+        "description" : "Operation to add a new restaurant data",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Record successfully deleted"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "restaurants" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "description" : "A model for the restaurant schema"
+      },
+      "review" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "description" : "A schema for the reviews model"
+      },
+      "inline_response_200" : {
+        "properties" : {
+          "Restaurant ID" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "The mix restaurant"
+          },
+          "contact" : {
+            "type" : "string",
+            "example" : "542802959"
+          },
+          "website_url" : {
+            "type" : "string",
+            "example" : "www.excober.com"
+          },
+          "location" : {
+            "type" : "string",
+            "example" : "East Legon"
+          },
+          "average_ratings" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "category" : {
+            "type" : "string",
+            "example" : "All"
+          },
+          "working_hours" : {
+            "type" : "string"
+          },
+          "about" : {
+            "type" : "string",
+            "example" : "Come and have an experience"
+          },
+          "profile image" : {
+            "type" : "string",
+            "example" : "/storage/2108985171.jpg"
+          },
+          "imagesss" : {
+            "type" : "string",
+            "example" : "[\"/storage/773438779.jpg\\\"\",\"/storage/441606909.jpg\\\"\"]"
+          },
+          "reviews" : {
+            "type" : "array",
+            "example" : [ ]
+          }
+        }
+      },
+      "diners_body" : {
+        "type" : "object",
+        "properties" : {
+          "Restaurant ID" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "The mix restaurant"
+          },
+          "contact" : {
+            "type" : "string",
+            "example" : "542802959"
+          },
+          "website_url" : {
+            "type" : "string",
+            "example" : "www.excober.com"
+          },
+          "location" : {
+            "type" : "string",
+            "example" : "East Legon"
+          },
+          "average_ratings" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "category" : {
+            "type" : "string",
+            "example" : "All"
+          },
+          "working_hours" : {
+            "type" : "string"
+          },
+          "about" : {
+            "type" : "string",
+            "example" : "Come and have an experience"
+          },
+          "profile image" : {
+            "type" : "string",
+            "example" : "/storage/2108985171.jpg"
+          },
+          "imagesss" : {
+            "type" : "string",
+            "example" : "[\"/storage/773438779.jpg\\\"\",\"/storage/441606909.jpg\\\"\"]"
+          }
+        }
+      },
+      "dinersid_body" : {
+        "type" : "object",
+        "properties" : {
+          "Restaurant ID" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "The mix restaurant"
+          },
+          "contact" : {
+            "type" : "string",
+            "example" : "542802959"
+          },
+          "website_url" : {
+            "type" : "string",
+            "example" : "www.excober.com"
+          },
+          "location" : {
+            "type" : "string",
+            "example" : "East Legon"
+          },
+          "average_ratings" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "category" : {
+            "type" : "string",
+            "example" : "All"
+          },
+          "working_hours" : {
+            "type" : "string"
+          },
+          "about" : {
+            "type" : "string",
+            "example" : "Come and have an experience"
+          },
+          "profile image" : {
+            "type" : "string",
+            "example" : "/storage/2108985171.jpg"
+          },
+          "imagesss" : {
+            "type" : "string",
+            "example" : "[\"/storage/773438779.jpg\\\"\",\"/storage/441606909.jpg\\\"\"]"
+          }
+        }
+      }
+    }
+  }
+}
