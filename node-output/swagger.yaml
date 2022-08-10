@@ -150,6 +150,33 @@
           "id" : {
             "type" : "integer",
             "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "about" : {
+            "type" : "string"
+          },
+          "location" : {
+            "type" : "string"
+          },
+          "website_url" : {
+            "type" : "string"
+          },
+          "contact" : {
+            "type" : "string"
+          },
+          "profile_image" : {
+            "type" : "string"
+          },
+          "images" : {
+            "type" : "string"
+          },
+          "working_hours" : {
+            "type" : "string"
+          },
+          "category" : {
+            "type" : "string"
           }
         },
         "description" : "A model for the restaurant schema"
@@ -160,6 +187,12 @@
           "id" : {
             "type" : "integer",
             "format" : "int64"
+          },
+          "comment" : {
+            "type" : "string"
+          },
+          "ratings" : {
+            "type" : "integer"
           }
         },
         "description" : "A schema for the reviews model"
